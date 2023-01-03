@@ -1,33 +1,61 @@
+/**
+ * 接收用户输入的命令，包括commandWord和secondWord
+ */
 package cn.edu.whut.sept.zuul;
 
 public class Command
 {
-    private String commandWord;
-    private String secondWord;
+    private String BasicCommand;  // 基础指令
 
+    private String SpecificCommand;   // 具体指令
+
+    /**
+     * 接收用户指令
+     */
     public Command(String firstWord, String secondWord)
     {
-        commandWord = firstWord;
-        this.secondWord = secondWord;
+        BasicCommand = firstWord;
+        this.SpecificCommand = secondWord;
     }
 
-    public String getCommandWord()
+    /**
+     *
+     * @return 返回基础指令
+     */
+    public String getBasicCommand()
     {
-        return commandWord;
+        return BasicCommand;
     }
 
+    /**
+     *
+     * @return 返回具体指令
+     */
     public String getSecondWord()
     {
-        return secondWord;
+        return SpecificCommand;
     }
 
-    public boolean isUnknown()
+    public void setSecondWord(String second)
     {
-        return (commandWord == null);
+        SpecificCommand = second;
     }
 
-    public boolean hasSecondWord()
+    /**
+     * 判断基础指令是否为空
+     * @return BasicCommand为空，则返回true，否则返回false
+     */
+    public boolean isBasicCommand()
     {
-        return (secondWord != null);
+        return (BasicCommand == null);
+    }
+
+    /**
+     * 判断具体指令是否为空
+     * @return SpecificCommand不为空，返回true，否则返回false
+     */
+    public boolean isSpecificCommand()
+    {
+        return (SpecificCommand != null);
     }
 }
