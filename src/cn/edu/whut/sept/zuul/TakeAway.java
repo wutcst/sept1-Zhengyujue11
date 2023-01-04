@@ -18,10 +18,11 @@ public class TakeAway extends Strategy{
     @Override
     public Object copeWithCommand() {
         String takedes = command.getSecondWord();
-        if(takedes == null) System.out.println("Please input the goods' description.");
+        if(takedes == null) {
+            System.out.println("Please input the goods.");
+        }
 
-        if(game.getCurrentRoom().deleteGoods(takedes) == true)
-        {
+        if(game.getCurrentRoom().deleteGoods(takedes) == true){
             System.out.println("You have taken it.");
         }
         else System.out.println("There is no such goods.");

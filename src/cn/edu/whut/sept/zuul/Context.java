@@ -11,10 +11,6 @@ public class Context {
         this.strategy = strategy;
     }
 
-    /**
-     * 调用策略方法，实现业务需求
-     * @return
-     */
     public Object getResult(){
         return strategy.copeWithCommand();
     }

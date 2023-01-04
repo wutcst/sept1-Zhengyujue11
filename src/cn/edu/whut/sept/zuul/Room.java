@@ -54,17 +54,17 @@ public class Room
     }
 
     /**
-     * @return 返回房间名.
+     * @return 返回房间名
      */
-    public String getShortDescription()
+    public String getBriefDescription()
     {
         return description;
     }
 
     /**
-     * @return 返回长的出口信息.
+     * @return 出口信息
      */
-    public String getLongDescription()
+    public String getDetailedDescription()
     {
         return "You are " + description + ".\n" + getExitString();
     }

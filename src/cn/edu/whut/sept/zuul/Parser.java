@@ -29,12 +29,10 @@ public class Parser
      */
     public Command getCommand()
     {
-        String inputLine;  // will hold the full input line
+        String inputLine;
         String word1 = null;
         String word2 = null;
-
-        System.out.print("> ");  // print prompt
-
+        System.out.print("> ");
         inputLine = reader.nextLine();
 
         // 获取输入的前两个单词
@@ -44,11 +42,10 @@ public class Parser
             if(tokenizer.hasNext()) {
                 word2 = tokenizer.next();  // get second word
                 second = word2;
-                // note: we just ignore the rest of the input line.
             }
         }
 
-        // 判断用户输入的命令是否合法，若合法，创建Command对象.
+        // 判断用户输入的命令是否合法，创建Command对象
         if(commands.isCommand(word1)) {
             return new Command(word1, word2);
         }
@@ -58,7 +55,7 @@ public class Parser
     }
 
     /**
-     * @return 返回第二个词.
+     * @return 返回第二个词
      */
     public String getSecond()
     {
@@ -70,6 +67,6 @@ public class Parser
      */
     public void showCommands()
     {
-//        commands.showAll();
+        commands.showCommands();
     }
 }

@@ -35,11 +35,11 @@ public class CommandWords
     /**
      * 显示所有有效指令
      */
-//    public void showAll()
-//    {
-//        for(String command: validCommands) {
-//            System.out.print(command + "  ");
-//        }
-//        System.out.println();
-//    }
+    public void showCommands()
+    {
+        for(String command: validCommands) {
+            System.out.print(command + "  ");
+        }
+        System.out.println();
+    }
 }

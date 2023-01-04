@@ -12,19 +12,18 @@ public class Look extends Strategy{
     }
 
     /**
-     * 查看当前房间信息
-     * 以及房间内物品信息
+     * 查看当前房间信息和房间内物品信息
      */
     @Override
     public Object copeWithCommand() {
-        System.out.println("This room's description is ");
-        String s = game.getCurrentRoom().getShortDescription();
+        System.out.println("The information of this room is");
+        String s = game.getCurrentRoom().getBriefDescription();
         System.out.println(s);
-        System.out.println("The goods in this room is ");
+        System.out.println("The information of the goods is");
         for(Goods goods : game.getCurrentRoom().getGoods())
         {
             System.out.print(goods.getDescription());
-            System.out.print(" ,it weights ");
+            System.out.print(" ,it weights:");
             System.out.print(goods.getWeight());
             System.out.println("kg");
         }

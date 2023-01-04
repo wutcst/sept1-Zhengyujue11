@@ -14,8 +14,7 @@ public class RoomTest {
 
     @Test
     public void test1() {
-        assertEquals("outside", room1.getShortDescription());
-
+        assertEquals("outside", room1.getBriefDescription());
     }
 
     @Test

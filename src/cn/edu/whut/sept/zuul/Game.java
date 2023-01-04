@@ -1,12 +1,12 @@
 /**
- * World-of-Zuul游戏的主类。
+ * World-of-Zuul游戏类
  */
 package cn.edu.whut.sept.zuul;
 
 public class Game
 {
-    private Parser parser;
-    private Room currentRoom;
+    private Parser parser;  // 解析器
+    private Room currentRoom;  // 当前房间
 
     /**
      * 初始化游戏，创建解析器
@@ -48,11 +48,11 @@ public class Game
     {
         Room mainBuilding, bar, office, lab, outside;
         Goods cookie, idCard, phone, cup, computer, coffee;
-        mainBuilding = new Room("You are in the mainBuilding");
-        bar = new Room("You are in a bar");
-        office = new Room("You are in the Senior office");
-        lab = new Room("You are in a computer lab");
-        outside = new Room("Outside the university");
+        mainBuilding = new Room("You are in the mainBuilding now");
+        bar = new Room("You are in a bar now");
+        office = new Room("You are in the Senior office now");
+        lab = new Room("You are in a computer lab now");
+        outside = new Room("Outside the university now");
 
         cookie = new Goods("cookie",0.05);
         idCard = new Goods("idCard",0.1);
@@ -62,26 +62,26 @@ public class Game
         coffee = new Goods("coffee",0.2);
 
         // 初始化出口
-        outside.setExit("east", mainBuilding);
-        outside.setExit("south", lab);
+        mainBuilding.setExit("north", outside);
+        mainBuilding.setGoods(phone);
+
+        outside.setExit("south", mainBuilding);
+        outside.setExit("east", lab);
         outside.setExit("west", bar);
         outside.setGoods(cookie);
         outside.setGoods(idCard);
 
-        mainBuilding.setExit("west", outside);
-        mainBuilding.setGoods(phone);
-
         bar.setExit("east", outside);
         bar.setGoods(coffee);
 
-        lab.setExit("north", outside);
+        lab.setExit("west", outside);
         lab.setExit("east", office);
         lab.setGoods(cup);
 
         office.setExit("west", lab);
         office.setGoods(computer);
 
-        currentRoom = outside;  // 初始的时刻在外面
+        currentRoom = outside;  // 初始的时候在外面
     }
 
 
@@ -95,7 +95,7 @@ public class Game
         System.out.println("Welcome to the World of Zuul!");
         System.out.println("if you need help,enter 'help'");
         System.out.println();
-        System.out.println(currentRoom.getLongDescription());
+        System.out.println(currentRoom.getDetailedDescription());
     }
 
     /**
