@@ -23,8 +23,7 @@ public class CommandWords
      * @param instructions 键入的指令
      * @return 有效指令返回true，无效返回false.
      */
-    public boolean isCommand(String instructions)
-    {
+    public boolean isCommand(String instructions) {
         for(int i = 0; i < validCommands.length; i++) {
             if(validCommands[i].equals(instructions))  // 判断是否为有效指令
                 return true;

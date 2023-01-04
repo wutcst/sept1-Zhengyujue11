@@ -20,32 +20,28 @@ public class Goods {
     /**
      * @return 返回描述
      */
-    public String getDescription()
-    {
+    public String getDescription() {
         return description;
     }
 
     /**
      * @return 返回物品重量
      */
-    public double getWeight()
-    {
+    public double getWeight() {
         return weight;
     }
 
     /**
      * 设置物品
      */
-    public void setDescription(String description)
-    {
+    public void setDescription(String description) {
         this.description = description;
     }
 
     /**
      * 设置物品重量
      */
-    public void setWeight(float weight)
-    {
+    public void setWeight(float weight) {
         this.weight = weight;
     }
 }
